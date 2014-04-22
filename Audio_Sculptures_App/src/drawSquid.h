@@ -13,17 +13,14 @@ public:
     void update();
     void draw();
     void exit();
-	
-    void touchDown(ofTouchEventArgs & touch);
-    void touchMoved(ofTouchEventArgs & touch);
-    void touchUp(ofTouchEventArgs & touch);
-    void touchDoubleTap(ofTouchEventArgs & touch);
-    void touchCancelled(ofTouchEventArgs & touch);
     
-    void lostFocus();
-    void gotFocus();
-    void gotMemoryWarning();
-    void deviceOrientationChanged(int newOrientation);
+    void slide(int x, int y);
+    
+    
+    ofVec2f point1, point2, point3, point4;
+    ofEasyCam cam;
+    float rotate, noise, speedNoise;
+    ofSoundPlayer sound;
     
     
 };

@@ -14,17 +14,21 @@ public:
     void draw();
     void exit();
 	
-    void touchDown(ofTouchEventArgs & touch);
-    void touchMoved(ofTouchEventArgs & touch);
-    void touchUp(ofTouchEventArgs & touch);
-    void touchDoubleTap(ofTouchEventArgs & touch);
-    void touchCancelled(ofTouchEventArgs & touch);
     
-    void lostFocus();
-    void gotFocus();
-    void gotMemoryWarning();
-    void deviceOrientationChanged(int newOrientation);
+    void shape(int x, int y, int size, float alpha);
     
+    float varyNoisePent(int amount, float speed); //useful noise function
+    float noise; //public variable
+    
+    void slide(int x, int y);
+    
+    
+    ofEasyCam cam;
+    float rotateShape;
+    float alpha1, alpha2, alpha3, alpha4;
+    float scaleParaX, scaleParaY, controlVolume, volumeNoise;
+    float controlShape;
+    ofSoundPlayer sound;
     
 };
 

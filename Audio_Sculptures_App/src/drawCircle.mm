@@ -11,15 +11,14 @@ drawCircle::~drawCircle() {
 }
 
 //--------------------------------------------------------------
-void drawCircle::setup(){	
+void drawCircle::setup(){
     
-    sound.loadSound("cirSound.aif");
+    sound.loadSound("cirSound.caf");
     sound.setMultiPlay(true);
     pos.set(0, 0);
     counter = 0;
     triggerSound = false;
     cam.setPosition(1000, 0, 2609);
-    
     
 }
 
@@ -42,11 +41,11 @@ void drawCircle::update(){
     cam.setPosition(1000, 0, 2609);
     
     cam.disableMouseInput();
-    
 }
 
 //--------------------------------------------------------------
 void drawCircle::draw(){
+    
     
     for (int i = 0; i < 300; i+=2) {
         pos.x = i;
@@ -55,7 +54,11 @@ void drawCircle::draw(){
     }
     
     ofDrawBitmapString("Camera: " + ofToString(cam.getPosition()), 50, 50);
-	
+    
+}
+
+void drawCircle::exit() {
+    
 }
 
 //--------------------------------------------------------------
@@ -75,56 +78,13 @@ void drawCircle::shape(float rotateY, int x, int y, float size){
 }
 
 //--------------------------------------------------------------
-void drawCircle::exit(){
-    
-}
-
-//--------------------------------------------------------------
-void drawCircle::touchDown(ofTouchEventArgs & touch){
+void drawCircle::touchTrigger(int x, int y){
     
     triggerSound = true;
     if (!sound.getIsPlaying()) {
         sound.play();
     }
-   
-}
-
-//--------------------------------------------------------------
-void drawCircle::touchMoved(ofTouchEventArgs & touch){
     
 }
 
-//--------------------------------------------------------------
-void drawCircle::touchUp(ofTouchEventArgs & touch){
-    
-}
 
-//--------------------------------------------------------------
-void drawCircle::touchDoubleTap(ofTouchEventArgs & touch){
-    
-}
-
-//--------------------------------------------------------------
-void drawCircle::touchCancelled(ofTouchEventArgs & touch){
-    
-}
-
-//--------------------------------------------------------------
-void drawCircle::lostFocus(){
-    
-}
-
-//--------------------------------------------------------------
-void drawCircle::gotFocus(){
-    
-}
-
-//--------------------------------------------------------------
-void drawCircle::gotMemoryWarning(){
-    
-}
-
-//--------------------------------------------------------------
-void drawCircle::deviceOrientationChanged(int newOrientation){
-    
-}

@@ -33,17 +33,23 @@ class testApp : public ofxiOSApp{
         void gotMemoryWarning();
         void deviceOrientationChanged(int newOrientation);
 
+    ofImage flLogo;
+    
     drawShape shape;
     drawCircle cir;
-    drawPentagon pent;
-    lineShape line;
-    drawCube cube;
-    drawSquid squid;
-    drawDiamond dia;
-    drawRect rect;
-    drawChip chip;
-    drawCyl cyl;
+    drawPentagon pent; //works
+    lineShape line; //works
+    drawCube cube; //works really well, could use higher volume
+    drawSquid squid; //up volume on loop
+    drawDiamond dia; //fix touch, fix shape
+    drawRect rect; //works
+    drawChip chip; //works
+    drawCyl cyl; //doesn't work
     
+    
+    //Notes:
+    
+    //Overall need to fix size of everthing
 
 };
 

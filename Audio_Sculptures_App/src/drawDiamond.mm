@@ -10,8 +10,14 @@ drawDiamond::~drawDiamond() {
 }
 
 //--------------------------------------------------------------
-void drawDiamond::setup(){	
+void drawDiamond::setup(){
     
+    
+    soundFiles.push_back("shapeBass1.caf");
+    soundFiles.push_back("shapeBass2.caf");
+    soundFiles.push_back("shapeBass3.caf");
+    
+    sound.loadSound(soundFiles[0]);
     
     
 }
@@ -19,11 +25,67 @@ void drawDiamond::setup(){
 //--------------------------------------------------------------
 void drawDiamond::update(){
     
+    rotate += 0.33f;
+    speed += 0.20f;
+    noise = 50 * ofNoise(speed);
+    noise = noise / 2;
+    
+    
+    if (trigger == true) {
+        sendNoise = noise;
+        
+    }
+    
+    if (!sound.getIsPlaying()) {
+        trigger = false;
+        sendNoise = 20;
+    }
+    
+    
+    
+}
+//--------------------------------------------------------------
+void drawDiamond::draw(){
+    
+    
+    sphere();
+    
+    
 }
 
 //--------------------------------------------------------------
-void drawDiamond::draw(){
-	
+void drawDiamond::sphere(){
+    
+    ofSetSphereResolution(3);
+    ofPushMatrix();
+    ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+    ofScale(1.25, 1.25);
+    ofRotateX(rotate);
+    ofRotateY(rotate);
+    //small shape
+    ofSetColor(ofColor::black);
+    ofFill();
+    ofDrawSphere(sendNoise);
+    //big shape
+    ofSetColor(ofColor::black);
+    ofNoFill();
+    ofDrawSphere(50);
+    ofPopMatrix();
+    
+}
+
+
+//--------------------------------------------------------------
+void drawDiamond::touchTrigger(int x, int y){
+    
+    trigger = true;
+    
+    int randomFile = ofRandom(3);
+    sound.loadSound(soundFiles[randomFile]);
+    sound.play();
+    
+    
+    
 }
 
 //--------------------------------------------------------------
@@ -31,47 +93,4 @@ void drawDiamond::exit(){
     
 }
 
-//--------------------------------------------------------------
-void drawDiamond::touchDown(ofTouchEventArgs & touch){
-    
-}
 
-//--------------------------------------------------------------
-void drawDiamond::touchMoved(ofTouchEventArgs & touch){
-    
-}
-
-//--------------------------------------------------------------
-void drawDiamond::touchUp(ofTouchEventArgs & touch){
-    
-}
-
-//--------------------------------------------------------------
-void drawDiamond::touchDoubleTap(ofTouchEventArgs & touch){
-    
-}
-
-//--------------------------------------------------------------
-void drawDiamond::touchCancelled(ofTouchEventArgs & touch){
-    
-}
-
-//--------------------------------------------------------------
-void drawDiamond::lostFocus(){
-    
-}
-
-//--------------------------------------------------------------
-void drawDiamond::gotFocus(){
-    
-}
-
-//--------------------------------------------------------------
-void drawDiamond::gotMemoryWarning(){
-    
-}
-
-//--------------------------------------------------------------
-void drawDiamond::deviceOrientationChanged(int newOrientation){
-    
-}

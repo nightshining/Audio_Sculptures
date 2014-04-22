@@ -9,9 +9,18 @@ drawSquid::~drawSquid() {
     
 }
 
+
 //--------------------------------------------------------------
-void drawSquid::setup(){	
+void drawSquid::setup(){
     
+    point1.set(0, 0);
+    point2.set(0, 500);
+    point3.set(200, 0);
+    point4.set(200, 200);
+    
+    sound.loadSound("squidSound.caf");
+    sound.play();
+    sound.setLoop(true);
     
     
 }
@@ -19,59 +28,49 @@ void drawSquid::setup(){
 //--------------------------------------------------------------
 void drawSquid::update(){
     
+    rotate += 0.33f;
+    speedNoise += 0.10f;
+    
+    noise = 1000 * ofNoise(speedNoise);
+    
+    
 }
+
 
 //--------------------------------------------------------------
 void drawSquid::draw(){
-	
+    
+    cam.begin();
+    for (int i = 0; i < 500; i += 5) {
+        ofPushMatrix();
+        ofSetColor(0);
+        ofNoFill();
+        ofScale(0.50, 0.50);
+        ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+        ofRotateX(i);
+        ofRotateY(rotate + i );
+        ofRotateZ( rotate  + cos(i) );
+        ofCurve(point1.x + i + noise, point1.y + i + noise, point2.x + i, point2.y + i, point3.x + i, point3.y + i, point4.x, point4.y);
+        ofPopMatrix();
+    }
+    cam.end();
+    
+    
+    
 }
+
+//--------------------------------------------------------------
+void drawSquid::slide(int x, int y){
+    
+    sound.setPan(ofMap(x, 0, ofGetWidth(), 0.0, 1.0, true));
+    
+    
+}
+
 
 //--------------------------------------------------------------
 void drawSquid::exit(){
     
 }
 
-//--------------------------------------------------------------
-void drawSquid::touchDown(ofTouchEventArgs & touch){
-    
-}
 
-//--------------------------------------------------------------
-void drawSquid::touchMoved(ofTouchEventArgs & touch){
-    
-}
-
-//--------------------------------------------------------------
-void drawSquid::touchUp(ofTouchEventArgs & touch){
-    
-}
-
-//--------------------------------------------------------------
-void drawSquid::touchDoubleTap(ofTouchEventArgs & touch){
-    
-}
-
-//--------------------------------------------------------------
-void drawSquid::touchCancelled(ofTouchEventArgs & touch){
-    
-}
-
-//--------------------------------------------------------------
-void drawSquid::lostFocus(){
-    
-}
-
-//--------------------------------------------------------------
-void drawSquid::gotFocus(){
-    
-}
-
-//--------------------------------------------------------------
-void drawSquid::gotMemoryWarning(){
-    
-}
-
-//--------------------------------------------------------------
-void drawSquid::deviceOrientationChanged(int newOrientation){
-    
-}

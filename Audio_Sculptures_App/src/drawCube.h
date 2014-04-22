@@ -13,19 +13,18 @@ public:
     void update();
     void draw();
     void exit();
-	
-    void touchDown(ofTouchEventArgs & touch);
-    void touchMoved(ofTouchEventArgs & touch);
-    void touchUp(ofTouchEventArgs & touch);
-    void touchDoubleTap(ofTouchEventArgs & touch);
-    void touchCancelled(ofTouchEventArgs & touch);
+    void touchTrigger(int x, int y);
     
-    void lostFocus();
-    void gotFocus();
-    void gotMemoryWarning();
-    void deviceOrientationChanged(int newOrientation);
+    float rotate, noise, speed, alpha, alphaOutline;
+    float sendNoise;
+    ofEasyCam cam;
     
     
+    bool trigger, triggerSound;
+    
+    ofSoundPlayer cubeSound;
+    ofRectangle clickBox;
+    //sculpture bounce for sound design
 };
 
 
