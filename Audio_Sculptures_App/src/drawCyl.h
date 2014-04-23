@@ -12,24 +12,15 @@ public:
     void setup();
     void update();
     void draw();
-    void cylinder(int width, int height, float alpha, int outline);
-
+    void cylinder(float iterate, int width, int height, float alpha, int outline);
     void exit();
 
-    void touchDown(ofTouchEventArgs & touch);
-    void touchMoved(ofTouchEventArgs & touch);
-    void touchUp(ofTouchEventArgs & touch);
-    void touchDoubleTap(ofTouchEventArgs & touch);
-    void touchCancelled(ofTouchEventArgs & touch);
-    
-    void lostFocus();
-    void gotFocus();
-    void gotMemoryWarning();
-    void deviceOrientationChanged(int newOrientation);
+    void touchTrigger(int x, int y);
     
     float rotate, noise, sendNoise;
     ofSoundPlayer sound;
     bool trigger;
+    
     
 };
 

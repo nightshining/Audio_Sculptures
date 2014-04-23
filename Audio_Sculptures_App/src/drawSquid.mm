@@ -45,7 +45,7 @@ void drawSquid::draw(){
         ofPushMatrix();
         ofSetColor(0);
         ofNoFill();
-        ofScale(0.50, 0.50);
+        //ofScale(0.50, 0.50);
         ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
         ofRotateX(i);
         ofRotateY(rotate + i );
@@ -62,7 +62,7 @@ void drawSquid::draw(){
 //--------------------------------------------------------------
 void drawSquid::slide(int x, int y){
     
-    sound.setPan(ofMap(x, 0, ofGetWidth(), 0.0, 1.0, true));
+    sound.setPan(ofMap(x, 0, ofGetWidth(), 1.0, 0.0, true));
     
     
 }

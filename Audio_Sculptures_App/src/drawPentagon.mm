@@ -83,8 +83,8 @@ float drawPentagon::varyNoisePent(int amount, float speed){
 //--------------------------------------------------------------
 void drawPentagon::slide(int x, int y){
     
-    controlShape = ofMap(x, 0, ofGetWidth(), 0.001, 0.03);
-    sound.setSpeed(ofMap(x, 0, ofGetWidth(), 0.40, 1.0, true));
+    controlShape = ofMap(x, 0, ofGetWidth(), 0.0001, 0.07);
+    sound.setSpeed(ofMap(x, 0, ofGetWidth(), 0.30, 1.0, true));
     controlVolume = ofMap(x, 0, ofGetWidth(), 0.01, .10);
 }
 

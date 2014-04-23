@@ -36,16 +36,17 @@ class testApp : public ofxiOSApp{
     ofImage flLogo;
     
     drawShape shape;
-    drawCircle cir;
-    drawPentagon pent; //works
-    lineShape line; //works
-    drawCube cube; //works really well, could use higher volume
-    drawSquid squid; //up volume on loop
-    drawDiamond dia; //fix touch, fix shape
-    drawRect rect; //works
-    drawChip chip; //works
-    drawCyl cyl; //doesn't work
+    drawCircle cir; //middle top
+    drawPentagon pent; //middle
+    lineShape line; //cam
+    drawCube cube; //left
+    drawSquid squid; //cam
+    drawDiamond dia; //right
+    drawRect rect; //middle
+    drawChip chip; //middle
+    drawCyl cyl; //middle bottom
     
+    int randomSculpture1, randomSculpture2, randomSculpture3;
     
     //Notes:
     

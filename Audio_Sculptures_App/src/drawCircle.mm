@@ -50,10 +50,10 @@ void drawCircle::draw(){
     for (int i = 0; i < 300; i+=2) {
         pos.x = i;
         pos.y = i;
-        shape( i + rotateShape, pos.x, pos.y , i );
+        shape( i + rotateShape, pos.x, pos.y, i );
     }
     
-    ofDrawBitmapString("Camera: " + ofToString(cam.getPosition()), 50, 50);
+    //ofDrawBitmapString("Camera: " + ofToString(cam.getPosition()), 50, 50);
     
 }
 
@@ -66,7 +66,7 @@ void drawCircle::shape(float rotateY, int x, int y, float size){
     
     cam.begin();
     ofSetCircleResolution(100);
-    ofSetColor(0, 0, 0, 190);
+    ofSetColor(0, 0, 0, 100);
     ofNoFill();
     ofPushMatrix();
     ofRotateY(rotateY * PI);

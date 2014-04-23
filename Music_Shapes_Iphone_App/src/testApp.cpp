@@ -15,15 +15,16 @@ void testApp::setup(){
     //flLogo.loadImage("fakelovelogo.jpg");
     //flLogo.resize(300, 300);
     
-    pent.setup();
-    
+    //pent.setup();
+    cyl.setup();
     
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
     
-    pent.update();
+    //pent.update();
+    cyl.update();
     
 
 }
@@ -40,7 +41,8 @@ void testApp::draw(){
         ofPopMatrix();
     }*/
     
-    pent.draw();
+    //pent.draw();
+    cyl.draw();
     
 }
 
@@ -67,12 +69,15 @@ void testApp::mouseMoved(int x, int y ){
 //--------------------------------------------------------------
 void testApp::mouseDragged(int x, int y, int button){
     
-    pent.mouseDragged(x, y, button);
+    //pent.mouseDragged(x, y, button);
+    
 }
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
  
+    cyl.mousePressed(x, y, button);
+    
 }
 
 //--------------------------------------------------------------

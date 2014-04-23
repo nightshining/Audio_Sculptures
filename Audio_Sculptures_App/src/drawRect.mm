@@ -50,7 +50,7 @@ void drawRect::rect(int x, int y, float rotate){
     ofRect(0, 0, x, y);
     ofPopMatrix();
     
-    ofDrawBitmapString("Track Speed: " + ofToString(sound.getSpeed()), 100, 100);
+    //ofDrawBitmapString("Track Speed: " + ofToString(sound.getSpeed()), 100, 100);
     
 }
 

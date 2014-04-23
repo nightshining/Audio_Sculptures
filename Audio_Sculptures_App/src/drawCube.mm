@@ -84,7 +84,7 @@ void drawCube::draw(){
     }
     //cam.end();
     ofSetColor(0);
-    ofDrawBitmapString("Waveform Position MS: " + ofToString(cubeSound.getPositionMS()), 50, 50);
+    //ofDrawBitmapString("Waveform Position MS: " + ofToString(cubeSound.getPositionMS()), 50, 50);
 }
 
 void drawCube::exit() {

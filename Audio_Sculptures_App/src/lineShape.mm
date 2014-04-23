@@ -49,7 +49,7 @@ void lineShape::drawLine(float x, float y, float rotate){
     ofLine(0, 50, x + rotate + 50, y + 50);
     ofPopMatrix();
     
-    ofDrawBitmapString("Track ms: " + ofToString(pad.getPositionMS()), 100, 100);
+    //ofDrawBitmapString("Track ms: " + ofToString(pad.getPositionMS()), 100, 100);
     
 }
 
