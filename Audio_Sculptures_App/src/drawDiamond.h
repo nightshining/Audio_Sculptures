@@ -15,11 +15,14 @@ public:
     void exit();
 	void sphere();
     void touchTrigger(int x, int y);
+    void moveDiamond(int x, int y);
     
     float rotate, sendNoise,noise, speed;
     bool trigger;
     ofSoundPlayer sound;
     vector <string> soundFiles;
+    ofPoint pos;
+    int sizeTrigger;
     
 };
 

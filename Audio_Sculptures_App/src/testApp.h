@@ -35,23 +35,29 @@ class testApp : public ofxiOSApp{
 
     ofImage flLogo;
     
-    drawShape shape;
-    drawCircle cir; //middle top
-    drawPentagon pent; //middle
-    lineShape line; //cam
-    drawCube cube; //left
-    drawSquid squid; //cam
-    drawDiamond dia; //right
-    drawRect rect; //middle
-    drawChip chip; //middle
-    drawCyl cyl; //middle bottom
+    drawShape shape; //n/a
+    drawCircle cir; //OK
+    drawPentagon pent; //OK
+    lineShape line; //OK
+    drawCube cube; //OK
+    drawSquid squid; //OK
+    drawDiamond dia; //OK
+    drawRect rect; //OK
+    drawChip chip; //OK
+    drawCyl cyl; //OK
     
     int randomSculpture1, randomSculpture2, randomSculpture3;
     
     //Notes:
     
     //Overall need to fix size of everthing
+    //Setup has all drone volume set 0.0
+    //Need to draw 1.0 volume
 
+    ///Randomize///
+    ofPoint randomPos;
+    int sizeRandom;
+    float alpha, alphaSine, counter;
 };
 
 

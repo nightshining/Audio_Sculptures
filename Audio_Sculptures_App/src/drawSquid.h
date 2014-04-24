@@ -21,7 +21,7 @@ public:
     ofEasyCam cam;
     float rotate, noise, speedNoise;
     ofSoundPlayer sound;
-    
+    ofPoint squidPos;
     
 };
 

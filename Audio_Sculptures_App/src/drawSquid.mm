@@ -21,8 +21,8 @@ void drawSquid::setup(){
     sound.loadSound("squidSound.caf");
     sound.play();
     sound.setLoop(true);
-    
-    
+    sound.setVolume(0.0);
+    squidPos.set(0, 0);
 }
 
 //--------------------------------------------------------------
@@ -40,20 +40,23 @@ void drawSquid::update(){
 //--------------------------------------------------------------
 void drawSquid::draw(){
     
-    cam.begin();
+    sound.setVolume(1.0);
+    //cam.setDistance(0.0);
+    
+   //cam.begin();
     for (int i = 0; i < 500; i += 5) {
         ofPushMatrix();
         ofSetColor(0);
         ofNoFill();
-        //ofScale(0.50, 0.50);
-        ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
-        ofRotateX(i);
+        ofTranslate(ofGetWidth() / 2 + 200, ofGetHeight() / 2);
+        ofRotateX(i + squidPos.y);
         ofRotateY(rotate + i );
         ofRotateZ( rotate  + cos(i) );
+        ofScale(0.20, 0.20);
         ofCurve(point1.x + i + noise, point1.y + i + noise, point2.x + i, point2.y + i, point3.x + i, point3.y + i, point4.x, point4.y);
         ofPopMatrix();
     }
-    cam.end();
+    //cam.end();
     
     
     
@@ -62,8 +65,9 @@ void drawSquid::draw(){
 //--------------------------------------------------------------
 void drawSquid::slide(int x, int y){
     
-    sound.setPan(ofMap(x, 0, ofGetWidth(), 1.0, 0.0, true));
-    
+    sound.setPan(ofMap(y, 0, ofGetWidth(), 1.0, 0.0, true));
+    squidPos.x = x;
+    squidPos.y = y;
     
 }
 

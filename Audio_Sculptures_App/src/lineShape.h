@@ -14,12 +14,13 @@ public:
     void draw();
     void exit();
     void drawLine(float x, float y, float rotate);
-
+    void moveLine(int x, int y);
+    
     float rotateShape;
     
     ofEasyCam cam;
     ofSoundPlayer pad;
-    
+    ofPoint pos;
     
 };
 

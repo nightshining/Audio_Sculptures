@@ -16,10 +16,13 @@ public:
     
     void rect(int x, int y, float rotate);
     void slide(int x, int y);
-    
+    void rectSlider();
+
     float rotateShape, speed;
     ofSoundPlayer sound;
     
+    ofPoint sliderPos;
+    int sliderSize, alpha;
     
     
 };

@@ -17,7 +17,7 @@ public:
     void touchTrigger(int x, int y);
     
     ofEasyCam cam;
-    float rotateShape;
+    float rotateShape, floating, sendFloating;
     int counter;
     ofSoundPlayer sound;
     ofPoint pos;

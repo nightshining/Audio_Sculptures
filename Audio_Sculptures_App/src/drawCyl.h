@@ -16,12 +16,13 @@ public:
     void exit();
 
     void touchTrigger(int x, int y);
+    void moveCyl(int x, int y);
     
     float rotate, noise, sendNoise;
     ofSoundPlayer sound;
     bool trigger;
-    
-    
+    ofPoint pos;
+    int sizeTrigger;
 };
 
 

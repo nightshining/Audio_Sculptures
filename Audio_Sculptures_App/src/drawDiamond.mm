@@ -18,8 +18,8 @@ void drawDiamond::setup(){
     soundFiles.push_back("shapeBass3.caf");
     
     sound.loadSound(soundFiles[0]);
-    
-    
+    sizeTrigger = 60;
+    pos.set(ofGetWidth() / 2 + 200, ofGetHeight() / 2);
 }
 
 //--------------------------------------------------------------
@@ -46,10 +46,16 @@ void drawDiamond::update(){
 }
 //--------------------------------------------------------------
 void drawDiamond::draw(){
-    
+  
+    ofSetColor(0,0,0,0);
+    ofCircle(pos.x, pos.y, sizeTrigger);
     
     sphere();
-    
+   
+}
+
+//--------------------------------------------------------------
+void drawDiamond::exit(){
     
 }
 
@@ -58,7 +64,7 @@ void drawDiamond::sphere(){
     
     ofSetSphereResolution(3);
     ofPushMatrix();
-    ofTranslate(ofGetWidth() / 2 + 200, ofGetHeight() / 2);
+    ofTranslate(pos.x, pos.y);
     ofScale(1.25, 1.25);
     ofRotateX(rotate);
     ofRotateY(rotate);
@@ -67,7 +73,7 @@ void drawDiamond::sphere(){
     ofFill();
     ofDrawSphere(sendNoise);
     //big shape
-    ofSetColor(0,0,0,200);
+    ofSetColor(0,0,0,150);
     ofNoFill();
     ofDrawSphere(50);
     ofPopMatrix();
@@ -78,19 +84,31 @@ void drawDiamond::sphere(){
 //--------------------------------------------------------------
 void drawDiamond::touchTrigger(int x, int y){
     
+    int dist1 = ofDist(pos.x, pos.y, x, y);
+    
+    if ( dist1 < sizeTrigger ) {
+    
     trigger = true;
     
     int randomFile = ofRandom(3);
     sound.loadSound(soundFiles[randomFile]);
     sound.play();
     
-    
+    }
     
 }
 
-//--------------------------------------------------------------
-void drawDiamond::exit(){
+void drawDiamond::moveDiamond(int x, int y) {
+    
+    int dist1 = ofDist(pos.x, pos.y, x, y);
+    
+    if ( dist1 < sizeTrigger ) {
+        pos.x = x;
+        pos.y = y;
+        
+    }    
     
 }
+
 
 

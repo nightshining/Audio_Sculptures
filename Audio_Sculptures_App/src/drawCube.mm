@@ -21,7 +21,8 @@ void drawCube::setup(){
     triggerSound = false;
     cubeSound.loadSound("drawCubeSound.caf");
     cubeSound.setMultiPlay(true);
-    
+    sizeTrigger = 60;
+    pos.set(ofGetWidth() / 2 - 200, ofGetHeight() / 2);
     
 }
 
@@ -56,12 +57,16 @@ void drawCube::update(){
 void drawCube::draw(){
     
     
-    clickBox.setFromCenter(ofGetWidth() / 2 - 200, ofGetHeight() / 2, 100, 100);
+    //clickBox.setFromCenter(ofGetWidth() / 2 - 200, ofGetHeight() / 2, 100, 100);
+   
+    //Trigger and move sound with circle
+    ofSetColor(0, 0, 0, 0);
+    ofCircle(pos.x, pos.y, sizeTrigger);
     
     //cam.begin();
     for (int i = 0; i < 50; i += 5) {
         ofPushMatrix();
-        ofTranslate(ofGetWidth() / 2 - 200, ofGetHeight() / 2);
+        ofTranslate(pos.x, pos.y);
         ofScale(2.5, 2.5);
         ofRotateY(rotate);
         ofRotateX(rotate);
@@ -95,9 +100,25 @@ void drawCube::exit() {
 //--------------------------------------------------------------
 void drawCube::touchTrigger(int x, int y){
     
-    if (clickBox.inside(x, y)) {
+    //if (clickBox.inside(x, y)) {
+    
+    int dist1 = ofDist(pos.x, pos.y, x, y);
+    
+    if ( dist1 < sizeTrigger ) {
         trigger = true;
         cubeSound.play();
     }
+}
+
+void drawCube::moveCube(int x, int y){
+    
+    int dist1 = ofDist(pos.x, pos.y, x, y);
+    
+    if ( dist1 < sizeTrigger ) {
+        pos.x = x;
+        pos.y = y;
+        
+    }
+    
 }
 
