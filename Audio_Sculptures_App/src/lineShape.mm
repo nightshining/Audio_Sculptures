@@ -12,10 +12,11 @@ lineShape::~lineShape() {
 //--------------------------------------------------------------
 void lineShape::setup(){
     
+    volumeLevel = 0.0;
     pad.loadSound("linePad.caf");
     pad.play();
     pad.setLoop(true);
-    pad.setVolume(0.0);
+    pad.setVolume(volumeLevel);
     pos.set(0, 0);
     
 }
@@ -28,13 +29,14 @@ void lineShape::update(){
     if (pad.getPositionMS() >= 17000) {
         pad.play();
     }
+    pad.setVolume(volumeLevel);
     
 }
 
 //--------------------------------------------------------------
 void lineShape::draw(){
     
-    pad.setVolume(1.0);
+    pad.setVolume(volumeLevel);
     cam.setDistance(0.0);
     
     cam.begin();

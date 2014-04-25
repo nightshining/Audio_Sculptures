@@ -22,7 +22,7 @@ public:
     ofSoundPlayer sound;
     ofPoint pos;
     bool triggerSound;
-	
+    ofFbo fbo;
 
 };
 

@@ -18,10 +18,11 @@ void drawSquid::setup(){
     point3.set(200, 0);
     point4.set(200, 200);
     
+    trackVolume = 0.0;
     sound.loadSound("squidSound.caf");
     sound.play();
     sound.setLoop(true);
-    sound.setVolume(0.0);
+    sound.setVolume(trackVolume);
     squidPos.set(0, 0);
 }
 
@@ -32,7 +33,7 @@ void drawSquid::update(){
     speedNoise += 0.10f;
     
     noise = 1000 * ofNoise(speedNoise);
-    
+    sound.setVolume(trackVolume);
     
 }
 
@@ -40,7 +41,7 @@ void drawSquid::update(){
 //--------------------------------------------------------------
 void drawSquid::draw(){
     
-    sound.setVolume(1.0);
+    sound.setVolume(trackVolume);
     //cam.setDistance(0.0);
     
    //cam.begin();

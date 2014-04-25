@@ -14,11 +14,12 @@ drawRect::~drawRect() {
 //--------------------------------------------------------------
 void drawRect::setup(){
     
+    trackVolume = 0.0;
     sound.loadSound("rectArp.caf");
     sound.play();
     sound.setLoop(true);
     speed = 10.0;
-    sound.setVolume(0.0);
+    sound.setVolume(trackVolume);
     sliderPos.set(100, ofGetHeight() - 100);
     sliderSize = 30;
 }
@@ -27,13 +28,13 @@ void drawRect::setup(){
 void drawRect::update(){
     
     rotateShape += speed;
-    
+    sound.setVolume(trackVolume);
     
 }
 //--------------------------------------------------------------
 void drawRect::draw(){
     
-    sound.setVolume(1.0);
+    sound.setVolume(trackVolume);
     
     for (int i = 0; i < 400; i += 25) {
         rect(i, i, rotateShape);
@@ -42,7 +43,7 @@ void drawRect::draw(){
     
     rectSlider();
     ofSetColor(0);
-    ofDrawBitmapString("Sound Sculpture Control", sliderPos.x + 50, sliderPos.y);
+    //ofDrawBitmapString("Sound Sculpture Control", sliderPos.x + 50, sliderPos.y);
     
 }
 
@@ -69,8 +70,8 @@ void drawRect::rect(int x, int y, float rotate){
 
 //--------------------------------------------------------------
 void drawRect::slide(int x, int y){
-    speed = ofMap(x, 0, ofGetWidth(), 0.01, 10.0);
-    sound.setSpeed(ofMap(x, 0, ofGetWidth(), 0.0, 1.0, true));
+    speed = ofMap(x, 0, ofGetWidth(), 10.0, 0.01);
+    sound.setSpeed(ofMap(x, 0, ofGetWidth(), 1.0, 0.0, true));
     
     //slide control
     sliderPos.x = x;

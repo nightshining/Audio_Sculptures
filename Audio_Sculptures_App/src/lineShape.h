@@ -16,7 +16,7 @@ public:
     void drawLine(float x, float y, float rotate);
     void moveLine(int x, int y);
     
-    float rotateShape;
+    float rotateShape, volumeLevel;
     
     ofEasyCam cam;
     ofSoundPlayer pad;

@@ -18,7 +18,7 @@ void drawPentagon::setup(){
     sound.setLoop(true);
     sound.setVolume(0.0);
     objectOn = false;
-    sliderPos.set(100, ofGetHeight() - 100);
+    sliderPos.set(100, ofGetHeight() - 175);
     sliderSize = 30;
 }
 
@@ -31,10 +31,16 @@ void drawPentagon::update(){
     scaleParaY = varyNoisePent(5.0, controlShape);
     
     if (objectOn == true) {
-    volumeNoise = varyNoisePent(1.0, controlVolume);
-    sound.setVolume(volumeNoise);
-    }
+        
+        volumeNoise = varyNoisePent(1.0, controlVolume);
+        sound.setVolume(volumeNoise);
     
+    } else {
+    
+        volumeNoise = 0.0;
+        sound.setVolume(volumeNoise);
+        
+    }
     //alphaCounter += 0.05f;
     //alpha = 200 * sin(alphaCounter);
     
@@ -51,7 +57,7 @@ void drawPentagon::draw(){
     
     cirSlider();
     ofSetColor(0);
-    ofDrawBitmapString("Sound Sculpture Control", sliderPos.x + 50, sliderPos.y);
+    //ofDrawBitmapString("Sound Sculpture Control", sliderPos.x + 50, sliderPos.y);
 
     
 }

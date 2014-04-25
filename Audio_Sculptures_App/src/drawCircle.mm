@@ -24,6 +24,8 @@ void drawCircle::setup(){
 
 //--------------------------------------------------------------
 void drawCircle::update(){
+
+
     
     floating += 0.033f;
     
@@ -37,18 +39,22 @@ void drawCircle::update(){
     }
     
     if (!sound.getIsPlaying()) {
+        
         rotateShape = 0;
         counter = 0;
         triggerSound = false;
+    
     }
     
     cam.setPosition(1000 + sendFloating, sendFloating, 2609 + sendFloating);
     cam.disableMouseInput();
+    
+    
+    
 }
 
 //--------------------------------------------------------------
 void drawCircle::draw(){
-    
     
     for (int i = 0; i < 300; i+=2) {
         pos.x = i;

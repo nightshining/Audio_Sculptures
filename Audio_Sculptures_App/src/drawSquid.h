@@ -22,7 +22,7 @@ public:
     float rotate, noise, speedNoise;
     ofSoundPlayer sound;
     ofPoint squidPos;
-    
+    float trackVolume;
 };
 
 

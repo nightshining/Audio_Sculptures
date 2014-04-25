@@ -23,7 +23,7 @@ public:
     
     ofPoint sliderPos;
     int sliderSize, alpha;
-    
+    float trackVolume;
     
 };
 
