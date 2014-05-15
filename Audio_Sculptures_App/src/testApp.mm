@@ -14,7 +14,7 @@ void testApp::setup(){
     flLogo.loadImage("fakelovelogo.jpg");
     flLogo.resize(300, 300);
     
-    cir.setup();
+    //cir.setup();
     pent.setup();
     line.setup();
     cube.setup();
@@ -24,6 +24,25 @@ void testApp::setup(){
     chip.setup();
     cyl.setup();
     
+    for (int i = 0; i < ofGetWidth(); i ++) {
+        for (int j = 0; j < ofGetHeight(); j ++) {
+            cirPosX = i;
+            cirPosY = j;
+        }
+    }
+    
+    int objectAmt = 40;
+    
+    Circles temp;
+    
+    for (int i = 0; i < objectAmt; i++) {
+        circles.push_back(temp);
+    }
+    
+    for (int i = 0; i < circles.size(); i++) {
+        circles[i].setup(ofRandom(ofGetWidth()),ofRandom(ofGetHeight()) );
+    }
+
     //Random button
     randomPos.set(75, 75);
     sizeRandom = 30;
@@ -33,7 +52,7 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
     
-    cir.update();
+    //cir.update();
     pent.update();
     line.update();
     cube.update();
@@ -42,6 +61,10 @@ void testApp::update(){
     rect.update();
     chip.update();
     cyl.update();
+    
+    for (int i = 0; i < circles.size(); i++) {
+        circles[i].update();
+    }
     
     alphaSine += 0.08f;
     
@@ -66,7 +89,9 @@ void testApp::draw(){
     
     
     if (randomSculpture1 == 1 || randomSculpture2 == 1 || randomSculpture3 == 1) {
-            cir.draw();
+        for (int i = 0; i < circles.size(); i++) {
+            circles[i].draw();
+        }
     }
     if (randomSculpture1 == 2 || randomSculpture2 == 2 || randomSculpture3 == 2) {
         
@@ -115,6 +140,7 @@ void testApp::draw(){
             cyl.draw();
     }
     
+  
     
     /////Fake logo
     if (ofGetElapsedTimef() < 4.0) {
@@ -154,13 +180,20 @@ void testApp::touchDown(ofTouchEventArgs & touch){
     cube.touchTrigger(touch.x, touch.y);
     
     }
-    if (randomSculpture1 == 1 || randomSculpture2 == 1 || randomSculpture3 == 1) {
+    //if (randomSculpture1 == 1 || randomSculpture2 == 1 || randomSculpture3 == 1) {
 
-    cir.touchTrigger(touch.x, touch.y);
-    }
+    //cir.touchTrigger(touch.x, touch.y);
+    //}
     if (randomSculpture1 == 9 || randomSculpture2 == 9 || randomSculpture3 == 9) {
 
     cyl.touchTrigger(touch.x, touch.y);
+    }
+    
+    if (randomSculpture1 == 1 || randomSculpture2 == 1 || randomSculpture3 == 1) {
+        
+        for (int i = 0; i < circles.size(); i++) {
+            circles[i].touchTrigger(touch.x, touch.y);
+        }
     }
     
     cout << "Finger: " << touch.id << endl;

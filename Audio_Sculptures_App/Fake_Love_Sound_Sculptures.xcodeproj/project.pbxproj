@@ -40,6 +40,7 @@
 		E4A823A412561BE3002F86A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A823A312561BE3002F86A2 /* CoreGraphics.framework */; };
 		E4D8936E11527B74007E1F53 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936B11527B74007E1F53 /* main.mm */; };
 		E4D8936F11527B74007E1F53 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936D11527B74007E1F53 /* testApp.mm */; };
+		E66A7D7F19253C1700E337CB /* Circles.mm in Sources */ = {isa = PBXBuildFile; fileRef = E66A7D7D19253C1700E337CB /* Circles.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		E4D8936B11527B74007E1F53 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = src/main.mm; sourceTree = SOURCE_ROOT; };
 		E4D8936C11527B74007E1F53 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
 		E4D8936D11527B74007E1F53 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = SOURCE_ROOT; };
+		E66A7D7D19253C1700E337CB /* Circles.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Circles.mm; sourceTree = "<group>"; };
+		E66A7D7E19253C1700E337CB /* Circles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circles.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +251,8 @@
 				5C7A1F5F1905D62F00467932 /* drawChip.h */,
 				5C7A1F601905D6F000467932 /* drawCyl.mm */,
 				5C7A1F621905D6FA00467932 /* drawCyl.h */,
+				E66A7D7D19253C1700E337CB /* Circles.mm */,
+				E66A7D7E19253C1700E337CB /* Circles.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -368,6 +373,7 @@
 				5C7A1F4F1905D46800467932 /* lineShape.mm in Sources */,
 				5C7A1F521905D4E000467932 /* drawCube.mm in Sources */,
 				5C7A1F551905D52D00467932 /* drawSquid.mm in Sources */,
+				E66A7D7F19253C1700E337CB /* Circles.mm in Sources */,
 				5C7A1F581905D58D00467932 /* drawDiamond.mm in Sources */,
 				5C7A1F5B1905D5DD00467932 /* drawRect.mm in Sources */,
 				5C7A1F5E1905D62600467932 /* drawChip.mm in Sources */,

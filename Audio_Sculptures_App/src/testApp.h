@@ -13,6 +13,7 @@
 #include "drawRect.h"
 #include "drawChip.h"
 #include "drawCyl.h"
+#include "Circles.h"
 
 class testApp : public ofxiOSApp{
 	
@@ -36,7 +37,7 @@ class testApp : public ofxiOSApp{
     ofImage flLogo;
     
     drawShape shape; //n/a
-    drawCircle cir; //OK
+    //drawCircle cir; //OK
     drawPentagon pent; //OK
     lineShape line; //OK
     drawCube cube; //OK
@@ -45,6 +46,9 @@ class testApp : public ofxiOSApp{
     drawRect rect; //OK
     drawChip chip; //OK
     drawCyl cyl; //OK
+    
+    vector<Circles> circles;
+    int cirPosX, cirPosY;
     
     int randomSculpture1, randomSculpture2, randomSculpture3;
     
