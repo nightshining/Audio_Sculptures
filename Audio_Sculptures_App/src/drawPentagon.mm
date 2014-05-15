@@ -18,8 +18,8 @@ void drawPentagon::setup(){
     sound.setLoop(true);
     sound.setVolume(0.0);
     objectOn = false;
-    sliderPos.set(100, ofGetHeight() - 175);
-    sliderSize = 30;
+    sliderPos.set(100, ofGetHeight() - 150);
+    sliderSize = 40;
 }
 
 //--------------------------------------------------------------
@@ -100,6 +100,10 @@ float drawPentagon::varyNoisePent(int amount, float speed){
 //--------------------------------------------------------------
 void drawPentagon::slide(int x, int y){
     
+    int dist1 = ofDist(sliderPos.x, sliderPos.y, x, y);
+    
+    if (dist1 < sliderSize){
+        
     controlShape = ofMap(x, 0, ofGetWidth(), 0.0001, 0.07);
     sound.setSpeed(ofMap(x, 0, ofGetWidth(), 0.30, 1.0, true));
     controlVolume = ofMap(x, 0, ofGetWidth(), 0.01, .10);
@@ -108,6 +112,7 @@ void drawPentagon::slide(int x, int y){
     sliderPos.x = x;
     
     alpha = ofMap(x, 0.0, ofGetWidth() - 100, 0.0, 255);
+    }
 }
 
 void drawPentagon::cirSlider() {

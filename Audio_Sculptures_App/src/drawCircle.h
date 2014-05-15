@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxiOS.h"
 #include "ofxiOSExtras.h"
+#include "ofxMultiTouch.h"
 
 class drawCircle : public ofxiOSApp{
 	

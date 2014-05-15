@@ -20,8 +20,8 @@ void drawRect::setup(){
     sound.setLoop(true);
     speed = 10.0;
     sound.setVolume(trackVolume);
-    sliderPos.set(100, ofGetHeight() - 100);
-    sliderSize = 30;
+    sliderPos.set(100, ofGetHeight() - 50);
+    sliderSize = 50;
 }
 
 //--------------------------------------------------------------
@@ -70,6 +70,10 @@ void drawRect::rect(int x, int y, float rotate){
 
 //--------------------------------------------------------------
 void drawRect::slide(int x, int y){
+    
+    int dist1 = ofDist(sliderPos.x, sliderPos.y, x, y);
+    
+    if (dist1 < sliderSize){
     speed = ofMap(x, 0, ofGetWidth(), 10.0, 0.01);
     sound.setSpeed(ofMap(x, 0, ofGetWidth(), 1.0, 0.0, true));
     
@@ -77,6 +81,7 @@ void drawRect::slide(int x, int y){
     sliderPos.x = x;
     
     alpha = ofMap(x, 0.0, ofGetWidth() - 100, 0.0, 255);
+    }
 }
 
 void drawRect::rectSlider() {

@@ -138,9 +138,6 @@ void testApp::exit(){
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs & touch){
     
-    if( touch.id != 0 ){
-        return;
-    }
     if (randomSculpture1 == 8 || randomSculpture2 == 8 || randomSculpture3 == 8) {
 
     chip.receivedTouch(touch.x, touch.y);
@@ -165,15 +162,13 @@ void testApp::touchDown(ofTouchEventArgs & touch){
 
     cyl.touchTrigger(touch.x, touch.y);
     }
+    
+    cout << "Finger: " << touch.id << endl;
+
 }
 
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs & touch){
-
-    if( touch.id != 0 ){
-        return;
-    }
-    
     
     if (randomSculpture1 == 7 || randomSculpture2 == 7 || randomSculpture3 == 7) {
 
@@ -216,10 +211,7 @@ void testApp::touchMoved(ofTouchEventArgs & touch){
 //--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs & touch){
 
-    if ( touch.id != 0) {
-        return;
-    }
-    
+  
     //// Random Button ////
     int dist1 = ofDist(randomPos.x, randomPos.y, touch.x, touch.y);
     

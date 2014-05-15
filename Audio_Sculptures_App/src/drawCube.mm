@@ -100,6 +100,7 @@ void drawCube::exit() {
 //--------------------------------------------------------------
 void drawCube::touchTrigger(int x, int y){
     
+        
     //if (clickBox.inside(x, y)) {
     
     int dist1 = ofDist(pos.x, pos.y, x, y);
@@ -107,7 +108,10 @@ void drawCube::touchTrigger(int x, int y){
     if ( dist1 < sizeTrigger ) {
         trigger = true;
         cubeSound.play();
-    }
+        
+        }
+    
+    
 }
 
 void drawCube::moveCube(int x, int y){
