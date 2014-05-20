@@ -14,6 +14,7 @@ public:
     void draw();
     void exit();
     void touchTrigger(int x, int y);
+    void upTouch(int x, int y);
     void moveCube(int x, int y);
     
     float rotate, noise, speed, alpha, alphaOutline;

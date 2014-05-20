@@ -93,9 +93,25 @@ void drawDiamond::touchTrigger(int x, int y){
     int randomFile = ofRandom(3);
     sound.loadSound(soundFiles[randomFile]);
     sound.play();
+    sound.setLoop(true);
     
     }
     
+}
+
+void drawDiamond::upTouch(int x, int y){
+    
+    int dist1 = ofDist(pos.x, pos.y, x, y);
+    
+    if ( dist1 < sizeTrigger ) {
+        
+        trigger = false;
+        sound.stop();
+        sound.setLoop(false);
+        
+    }
+    
+
 }
 
 void drawDiamond::moveDiamond(int x, int y) {

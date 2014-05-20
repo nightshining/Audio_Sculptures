@@ -261,6 +261,23 @@ void testApp::touchUp(ofTouchEventArgs & touch){
     
     }
     
+    /// If you hold the "Chip" object it loops if touchUp then off
+    if (randomSculpture1 == 8 || randomSculpture2 == 8 || randomSculpture3 == 8) {
+        
+        chip.upTouch(touch.x, touch.y);
+    }
+    
+    if (randomSculpture1 == 6 || randomSculpture2 == 6 || randomSculpture3 == 6) {
+        
+        dia.upTouch(touch.x, touch.y);
+        
+    }
+    if (randomSculpture1 == 4 || randomSculpture2 == 4 || randomSculpture3 == 4) {
+        
+        cube.upTouch(touch.x, touch.y);
+        
+    }
+   
 }
 
 //--------------------------------------------------------------

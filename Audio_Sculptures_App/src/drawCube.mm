@@ -40,15 +40,22 @@ void drawCube::update(){
         alpha = noise;
         sendNoise = noise;
         alphaOutline = noise;
-        
-    }
-    
-    if (cubeSound.getPositionMS() >= 3200) {
-        trigger = false;
+    } else if (!trigger || cubeSound.getPositionMS() >= 3200 ) {
         alpha = 240;
         sendNoise = 0;
         alphaOutline = 200;
+        cubeSound.setPositionMS(0);
     }
+ 
+    
+    if (trigger && cubeSound.getPosition() == 0) {
+        alpha = noise;
+        sendNoise = noise;
+        alphaOutline = noise;
+        
+    }
+    
+    cout << "Cube Trigger: " << trigger << endl;
     
 }
 
@@ -108,11 +115,28 @@ void drawCube::touchTrigger(int x, int y){
     if ( dist1 < sizeTrigger ) {
         trigger = true;
         cubeSound.play();
+        cubeSound.setLoop(true);
+        cubeSound.setPositionMS(0);
         
-        }
-    
+    }
     
 }
+
+void drawCube::upTouch(int x, int y){
+    
+    //if (clickBox.inside(x, y)) {
+    
+    int dist1 = ofDist(pos.x, pos.y, x, y);
+    
+    if ( dist1 < sizeTrigger ) {
+        trigger = false;
+        cubeSound.stop();
+        cubeSound.setLoop(false);
+        
+    }
+    
+}
+
 
 void drawCube::moveCube(int x, int y){
     

@@ -66,7 +66,7 @@ void drawSquid::draw(){
 //--------------------------------------------------------------
 void drawSquid::slide(int x, int y){
     
-    sound.setPan(ofMap(y, 0, ofGetWidth(), 1.0, 0.0, true));
+    sound.setPan(ofMap(y, 0, ofGetWidth(), 1.0, -1.0, true));
     squidPos.x = x;
     squidPos.y = y;
     

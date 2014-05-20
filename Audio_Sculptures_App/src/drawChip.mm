@@ -83,10 +83,21 @@ void drawChip::receivedTouch(int x, int y) {
     int dist1 = ofDist(pos.x, pos.y, x, y);
     
     if ( dist1 < size ) {
-        
         trigger = true;
+        clicks.setPositionMS(0);
         clicks.play();
-        
+        clicks.setLoop(true);
+    }
+    
+}
+void drawChip::upTouch(int x, int y){
+    
+    int dist1 = ofDist(pos.x, pos.y, x, y);
+    
+    if ( dist1 < size ) {
+        trigger = false;
+        clicks.stop();
+        clicks.setLoop(false);
     }
     
 }

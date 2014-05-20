@@ -14,6 +14,9 @@ public:
     void draw();
     void button(int size, int color);
     void receivedTouch(int x, int y);
+    void upTouch(int x, int y);
+
+    
     void exit();
 
     

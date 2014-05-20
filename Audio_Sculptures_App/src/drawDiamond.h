@@ -15,6 +15,7 @@ public:
     void exit();
 	void sphere();
     void touchTrigger(int x, int y);
+    void upTouch(int x, int y);
     void moveDiamond(int x, int y);
     
     float rotate, sendNoise,noise, speed;
