@@ -55,7 +55,6 @@ void drawCube::update(){
         
     }
     
-    cout << "Cube Trigger: " << trigger << endl;
     
 }
 

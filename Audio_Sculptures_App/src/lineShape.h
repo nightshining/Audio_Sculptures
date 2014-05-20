@@ -22,6 +22,7 @@ public:
     ofSoundPlayer pad;
     ofPoint pos;
     
+    float counter, sinePan, sineSpeed;
 };
 
 

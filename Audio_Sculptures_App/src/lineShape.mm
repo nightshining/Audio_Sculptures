@@ -12,12 +12,13 @@ lineShape::~lineShape() {
 //--------------------------------------------------------------
 void lineShape::setup(){
     
-    volumeLevel = 0.0;
+    volumeLevel = 0.50;
     pad.loadSound("linePad.caf");
     pad.play();
     pad.setLoop(true);
     pad.setVolume(volumeLevel);
     pos.set(0, 0);
+    sineSpeed = 0.25f;
     
 }
 
@@ -30,6 +31,11 @@ void lineShape::update(){
         pad.play();
     }
     pad.setVolume(volumeLevel);
+    
+    
+    counter += sineSpeed;
+    sinePan = 1.0 * sin(counter);
+    pad.setPan(sinePan);
     
 }
 
@@ -65,6 +71,8 @@ void lineShape::moveLine(int x, int y) {
     
     x = ofMap(pos.x, 0, ofGetWidth(), 0.0, 1.0);
     y = ofMap(pos.y, 0, ofGetHeight(), 0.0, 1.0);
+    
+    
     
 }
 

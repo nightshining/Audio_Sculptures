@@ -196,7 +196,7 @@ void testApp::touchDown(ofTouchEventArgs & touch){
         }
     }
     
-    cout << "Finger: " << touch.id << endl;
+    //cout << "Finger: " << touch.id << endl;
 
 }
 
@@ -255,9 +255,9 @@ void testApp::touchUp(ofTouchEventArgs & touch){
     randomSculpture2 = ofRandom(10);
     randomSculpture3 = ofRandom(10);
     
-    cout << randomSculpture1 << endl;
-    cout << randomSculpture2 << endl;
-    cout << randomSculpture3 << endl;
+    /*cout << "Sculpture 1: " << randomSculpture1 << endl;
+    cout << "Sculpture 2: " << randomSculpture2 << endl;
+    cout << "Sculpture 3: " << randomSculpture3 << endl;*/
     
     }
     
