@@ -46,6 +46,8 @@ void testApp::setup(){
     //Random button
     randomPos.set(75, 75);
     sizeRandom = 30;
+    
+    gif.setup();
 
 }
 
@@ -67,7 +69,6 @@ void testApp::update(){
     }
     
     alphaSine += 0.08f;
-    
     alpha = 255 * sin(alphaSine);
     
 }
@@ -75,7 +76,14 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
     
-    ////Randommize button
+    ofPushMatrix();
+    ofSetColor(255, 255, 255, 255);
+    ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+    gif.draw();
+    ofPopMatrix();
+    
+    
+    ////Randomize button
     ofPushMatrix();
     ofSetCircleResolution(100);
     ofSetColor(0, 0, 0, 100);
@@ -86,6 +94,7 @@ void testApp::draw(){
     ofCircle(randomPos.x, randomPos.y, sizeRandom);
     ///ofDrawBitmapString("Randomize Sound Sculptures", 150, 75);
     ofPopMatrix();
+    
     
     
     if (randomSculpture1 == 1 || randomSculpture2 == 1 || randomSculpture3 == 1) {
@@ -143,7 +152,7 @@ void testApp::draw(){
   
     
     /////Fake logo
-    if (ofGetElapsedTimef() < 4.0) {
+    /*if (ofGetElapsedTimef() < 4.0) {
      ofPushMatrix();
      ofSetColor(255);
      ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
@@ -151,7 +160,7 @@ void testApp::draw(){
      //flLogo.setAnchorPoint(ofGetWidth() / 2, ofGetHeight() / 2);
      flLogo.draw(0, 0);
      ofPopMatrix();
-     }
+     }*/
     
     
 }

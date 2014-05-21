@@ -14,6 +14,8 @@
 #include "drawChip.h"
 #include "drawCyl.h"
 #include "Circles.h"
+#include "drawGifs.h"
+
 
 class testApp : public ofxiOSApp{
 	
@@ -46,6 +48,8 @@ class testApp : public ofxiOSApp{
     drawRect rect; //OK
     drawChip chip; //OK
     drawCyl cyl; //OK
+    
+    drawGifs gif;
     
     vector<Circles> circles;
     int cirPosX, cirPosY;
