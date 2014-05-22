@@ -45,9 +45,9 @@ void drawSquid::draw(){
     //cam.setDistance(0.0);
     
    //cam.begin();
-    for (int i = 0; i < 500; i += 5) {
+    for (int i = 0; i < 700; i += 5) {
         ofPushMatrix();
-        ofSetColor(0);
+        ofSetColor(ofColor::black, ofMap(i, 0, 500, 180, 100));
         ofNoFill();
         ofTranslate(ofGetWidth() / 2 + 200, ofGetHeight() / 2);
         ofRotateX(i + squidPos.y);

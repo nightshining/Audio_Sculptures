@@ -17,7 +17,7 @@ void drawGifs::setup(){
 	//frame01.png
 	//this creates a method call where the parameters
 	//prefix is frame, file type is png, from frame 1 to 11, 2 digits in the number
-	sequence.loadSequence("frame", "png", 1, 11, 2);
+	sequence.loadSequence("Mountain", "png", 1, 3, 2);
 	sequence.preloadAllFrames();	//this way there is no stutter when loading frames
 	sequence.setFrameRate(10); //set to ten frames per second for Muybridge's horse.
 	
