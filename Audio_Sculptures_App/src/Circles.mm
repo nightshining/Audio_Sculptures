@@ -38,7 +38,7 @@ void Circles::update(){
 //--------------------------------------------------------------
 void Circles::draw(){
     
-    ofSetCircleResolution(10);
+    ofSetCircleResolution(5);
     for (int i = 0; i < 50; i += 10) {
         ofPushMatrix();
         ofTranslate(fingerPos.x, fingerPos.y);

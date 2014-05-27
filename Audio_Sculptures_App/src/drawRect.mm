@@ -37,8 +37,10 @@ void drawRect::draw(){
     sound.setVolume(trackVolume);
     
     for (int i = 0; i < 400; i += 25) {
+        ofPushMatrix();
         rect(i, i, rotateShape);
         rect(i, i, -rotateShape);
+        ofPopMatrix();
     }
     
     rectSlider();

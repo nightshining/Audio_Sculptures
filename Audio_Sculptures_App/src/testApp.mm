@@ -11,8 +11,8 @@ void testApp::setup(){
     ofSetFrameRate(60);
     ofSetRectMode(OF_RECTMODE_CENTER);
     
-    flLogo.loadImage("fakelovelogo.jpg");
-    flLogo.resize(300, 300);
+    //flLogo.loadImage("fakelovelogo.jpg");
+    //flLogo.resize(300, 300);
     
     //cir.setup();
     pent.setup();
@@ -47,8 +47,20 @@ void testApp::setup(){
     randomPos.set(75, 75);
     sizeRandom = 30;
     
-    gif.setup();
+    /*
+    //Handles all background animated gifs  
+    imageNames.push_back("Water/water");
+    imageNames.push_back("Mountain/Mountain");
+    imageNames.push_back("Beach");
+    imageNames.push_back("H");
+    
+    gif.loadNewSequence(imageNames[0], 6);
+     */
 
+    //images.loadNewSequence("Mountain/Mountain", 6);
+    
+
+    
 }
 
 //--------------------------------------------------------------
@@ -71,16 +83,22 @@ void testApp::update(){
     alphaSine += 0.08f;
     alpha = 255 * sin(alphaSine);
     
+    //images.bangFrames();
+    
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
     
+    
     ofPushMatrix();
     ofSetColor(255, 255, 255, 255);
     ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
-    gif.draw();
+    ofScale(1.0, 1.0);
+    //gif.draw();
+    //images.draw();
     ofPopMatrix();
+    
     
     
     ////Randomize button
@@ -168,6 +186,7 @@ void testApp::draw(){
 //--------------------------------------------------------------
 void testApp::exit(){
 
+    
 }
 
 //--------------------------------------------------------------
@@ -267,6 +286,7 @@ void testApp::touchUp(ofTouchEventArgs & touch){
     /*cout << "Sculpture 1: " << randomSculpture1 << endl;
     cout << "Sculpture 2: " << randomSculpture2 << endl;
     cout << "Sculpture 3: " << randomSculpture3 << endl;*/
+   
     
     }
     
@@ -316,5 +336,7 @@ void testApp::gotMemoryWarning(){
 
 //--------------------------------------------------------------
 void testApp::deviceOrientationChanged(int newOrientation){
+    
+
 
 }

@@ -40,6 +40,8 @@
 		E4A823A412561BE3002F86A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A823A312561BE3002F86A2 /* CoreGraphics.framework */; };
 		E4D8936E11527B74007E1F53 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936B11527B74007E1F53 /* main.mm */; };
 		E4D8936F11527B74007E1F53 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936D11527B74007E1F53 /* testApp.mm */; };
+		E6359A911935015C00E4FB42 /* ofxThreadedImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6359A8F1935015C00E4FB42 /* ofxThreadedImageLoader.cpp */; };
+		E6359A971935036500E4FB42 /* imageCounter.mm in Sources */ = {isa = PBXBuildFile; fileRef = E6359A951935036500E4FB42 /* imageCounter.mm */; };
 		E66A7D7F19253C1700E337CB /* Circles.mm in Sources */ = {isa = PBXBuildFile; fileRef = E66A7D7D19253C1700E337CB /* Circles.mm */; };
 		E696B21B192C070800506912 /* drawGifs.mm in Sources */ = {isa = PBXBuildFile; fileRef = E696B219192C070800506912 /* drawGifs.mm */; };
 		E696B22A192C078D00506912 /* ofxImageSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E696B228192C078D00506912 /* ofxImageSequence.cpp */; };
@@ -110,6 +112,10 @@
 		E4D8936B11527B74007E1F53 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = src/main.mm; sourceTree = SOURCE_ROOT; };
 		E4D8936C11527B74007E1F53 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
 		E4D8936D11527B74007E1F53 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = SOURCE_ROOT; };
+		E6359A8F1935015C00E4FB42 /* ofxThreadedImageLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxThreadedImageLoader.cpp; sourceTree = "<group>"; };
+		E6359A901935015C00E4FB42 /* ofxThreadedImageLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxThreadedImageLoader.h; sourceTree = "<group>"; };
+		E6359A951935036500E4FB42 /* imageCounter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = imageCounter.mm; sourceTree = "<group>"; };
+		E6359A961935036500E4FB42 /* imageCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageCounter.h; sourceTree = "<group>"; };
 		E66A7D7D19253C1700E337CB /* Circles.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Circles.mm; sourceTree = "<group>"; };
 		E66A7D7E19253C1700E337CB /* Circles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circles.h; sourceTree = "<group>"; };
 		E696B219192C070800506912 /* drawGifs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = drawGifs.mm; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 		BB16F26B0F2B646B00518274 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				E6359A8D1935015C00E4FB42 /* ofxThreadedImageLoader */,
 				E696B226192C078D00506912 /* ofxImageSequence */,
 			);
 			name = addons;
@@ -262,9 +269,29 @@
 				E66A7D7E19253C1700E337CB /* Circles.h */,
 				E696B219192C070800506912 /* drawGifs.mm */,
 				E696B21A192C070800506912 /* drawGifs.h */,
+				E6359A951935036500E4FB42 /* imageCounter.mm */,
+				E6359A961935036500E4FB42 /* imageCounter.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
+		};
+		E6359A8D1935015C00E4FB42 /* ofxThreadedImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				E6359A8E1935015C00E4FB42 /* src */,
+			);
+			name = ofxThreadedImageLoader;
+			sourceTree = "<group>";
+		};
+		E6359A8E1935015C00E4FB42 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E6359A8F1935015C00E4FB42 /* ofxThreadedImageLoader.cpp */,
+				E6359A901935015C00E4FB42 /* ofxThreadedImageLoader.h */,
+			);
+			name = src;
+			path = ../../../../of_v0.8.1_osx_release/addons/ofxThreadedImageLoader/src;
+			sourceTree = "<group>";
 		};
 		E696B226192C078D00506912 /* ofxImageSequence */ = {
 			isa = PBXGroup;
@@ -395,8 +422,10 @@
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
 				E4D8936F11527B74007E1F53 /* testApp.mm in Sources */,
 				5C7A1F3D1905D1D800467932 /* drawShape.mm in Sources */,
+				E6359A911935015C00E4FB42 /* ofxThreadedImageLoader.cpp in Sources */,
 				5C7A1F491905D3A400467932 /* drawCircle.mm in Sources */,
 				5C7A1F4C1905D3E000467932 /* drawPentagon.mm in Sources */,
+				E6359A971935036500E4FB42 /* imageCounter.mm in Sources */,
 				E696B22A192C078D00506912 /* ofxImageSequence.cpp in Sources */,
 				5C7A1F4F1905D46800467932 /* lineShape.mm in Sources */,
 				5C7A1F521905D4E000467932 /* drawCube.mm in Sources */,

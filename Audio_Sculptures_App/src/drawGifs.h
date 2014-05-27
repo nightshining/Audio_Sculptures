@@ -1,3 +1,4 @@
+//////IDEA: NOT IN USE
 
 #pragma once
 
@@ -12,12 +13,10 @@ class drawGifs : public ofxiOSApp{
 public:
     drawGifs();
     ~drawGifs();
-    void setup();
-    void update();
     void draw();
     void exit();
-    void loadNewSequence();
-    void loadActionSequence();
+    void loadNewSequence(string imageName, int totalAmt);
+    void unloadSequence();
 	
     void touchDown(ofTouchEventArgs & touch);
     void touchMoved(ofTouchEventArgs & touch);
@@ -29,9 +28,9 @@ public:
     void gotFocus();
     void gotMemoryWarning();
     void deviceOrientationChanged(int newOrientation);
-  
+    
     ofxImageSequence sequence;
-    vector<string> scenes;
+    
 };
 
 

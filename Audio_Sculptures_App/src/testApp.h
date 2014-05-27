@@ -14,7 +14,8 @@
 #include "drawChip.h"
 #include "drawCyl.h"
 #include "Circles.h"
-#include "drawGifs.h"
+//#include "drawGifs.h"
+//#include "imageCounter.h"
 
 
 class testApp : public ofxiOSApp{
@@ -36,7 +37,7 @@ class testApp : public ofxiOSApp{
         void gotMemoryWarning();
         void deviceOrientationChanged(int newOrientation);
 
-    ofImage flLogo;
+    //ofImage flLogo;
     
     drawShape shape; //n/a
     //drawCircle cir; //OK
@@ -49,7 +50,13 @@ class testApp : public ofxiOSApp{
     drawChip chip; //OK
     drawCyl cyl; //OK
     
+    /*
+    //Backgrounds
     drawGifs gif;
+    vector<string> imageNames;
+    */
+    //imageCounter images;
+    
     
     vector<Circles> circles;
     int cirPosX, cirPosY;
