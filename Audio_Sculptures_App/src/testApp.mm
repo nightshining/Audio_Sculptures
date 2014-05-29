@@ -46,20 +46,19 @@ void testApp::setup(){
     //Random button
     randomPos.set(75, 75);
     sizeRandom = 30;
+    randomImage = 0;
     
-    /*
-    //Handles all background animated gifs  
-    imageNames.push_back("Water/water");
-    imageNames.push_back("Mountain/Mountain");
-    imageNames.push_back("Beach");
-    imageNames.push_back("H");
+    //// GENERATE BACKGROUNDS ////
     
-    gif.loadNewSequence(imageNames[0], 6);
-     */
-
-    //images.loadNewSequence("Mountain/Mountain", 6);
+    imageNames.push_back("Lake/Lake");
+    imageNames.push_back("Mountains/Mountains");
     
-
+    gif.resize(imageNames.size());
+    
+    for (int i = 0; i < imageNames.size(); i++) {
+    gif[i].loadNewSequence(imageNames[i], 10, 7);
+    }
+    ////gif.loadNewSequence(fileName, amtFiles, frameRate)
     
 }
 
@@ -83,22 +82,13 @@ void testApp::update(){
     alphaSine += 0.08f;
     alpha = 255 * sin(alphaSine);
     
-    //images.bangFrames();
     
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
     
-    
-    ofPushMatrix();
-    ofSetColor(255, 255, 255, 255);
-    ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
-    ofScale(1.0, 1.0);
-    //gif.draw();
-    //images.draw();
-    ofPopMatrix();
-    
+    gif[randomImage].draw();
     
     
     ////Randomize button
@@ -113,7 +103,13 @@ void testApp::draw(){
     ///ofDrawBitmapString("Randomize Sound Sculptures", 150, 75);
     ofPopMatrix();
     
-    
+    if (randomSculpture1 == 7 || randomSculpture2 == 7 || randomSculpture3 == 7) {
+        rect.trackVolume = 0.50;
+        rect.draw();
+    } else {
+        rect.trackVolume = 0.0;
+    }
+
     
     if (randomSculpture1 == 1 || randomSculpture2 == 1 || randomSculpture3 == 1) {
         for (int i = 0; i < circles.size(); i++) {
@@ -152,13 +148,7 @@ void testApp::draw(){
 
             dia.draw();
     }
-    if (randomSculpture1 == 7 || randomSculpture2 == 7 || randomSculpture3 == 7) {
-            rect.trackVolume = 0.50;
-            rect.draw();
-    } else {
-            rect.trackVolume = 0.0;
-    }
-    if (randomSculpture1 == 8 || randomSculpture2 == 8 || randomSculpture3 == 8) {
+        if (randomSculpture1 == 8 || randomSculpture2 == 8 || randomSculpture3 == 8) {
 
             chip.draw();
     }
@@ -282,6 +272,12 @@ void testApp::touchUp(ofTouchEventArgs & touch){
     randomSculpture1 = ofRandom(10);
     randomSculpture2 = ofRandom(10);
     randomSculpture3 = ofRandom(10);
+        
+    randomImage = ofRandom(gif.size());
+    
+    cube.randomizeColor();
+    dia.randomizeColor();
+    rect.randomizeColor();
     
     /*cout << "Sculpture 1: " << randomSculpture1 << endl;
     cout << "Sculpture 2: " << randomSculpture2 << endl;

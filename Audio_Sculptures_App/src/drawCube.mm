@@ -23,7 +23,7 @@ void drawCube::setup(){
     cubeSound.setMultiPlay(true);
     sizeTrigger = 60;
     pos.set(ofGetWidth() / 2 - 200, ofGetHeight() / 2);
-    
+    randomFill.set(ofColor::black);
 }
 
 //--------------------------------------------------------------
@@ -78,7 +78,7 @@ void drawCube::draw(){
         ofRotateX(rotate);
         //ofRotateZ(rotate);
         //small box
-        ofSetColor(0, 0, 0, alpha + 10);
+        ofSetColor(randomFill, alpha + 10);
         ofFill();
         ofDrawBox(0, 0, -1, 10 + sendNoise, 10 + sendNoise, 10 + sendNoise);
         ofSetColor(255, 240, 250, alpha);
@@ -94,14 +94,34 @@ void drawCube::draw(){
         ofPopMatrix();
     }
     //cam.end();
-    ofSetColor(0);
-    //ofDrawBitmapString("Waveform Position MS: " + ofToString(cubeSound.getPositionMS()), 50, 50);
+    
+    //ofSetColor(0);
+    //ofDrawBitmapString("Waveform MS: " + ofToString(cubeSound.getPositionMS()), 50, 50);
 }
 
 void drawCube::exit() {
     
 }
 
+void drawCube::randomizeColor() {
+    
+    randomColor = ofRandom(4);
+    
+    switch (randomColor) {
+        case 0:
+            randomFill = ofColor::teal;
+            break;
+        case 1:
+            randomFill = ofColor::lightYellow;
+            break;
+        case 2:
+            randomFill = ofColor::magenta;
+        default:
+            randomFill = ofColor::black;
+            break;
+    }
+    
+}
 
 //--------------------------------------------------------------
 void drawCube::touchTrigger(int x, int y){

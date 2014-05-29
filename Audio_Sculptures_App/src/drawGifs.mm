@@ -1,4 +1,3 @@
-//////IDEA: NOT IN USE
 
 #include "drawGifs.h"
 
@@ -14,21 +13,25 @@ drawGifs::~drawGifs() {
 //--------------------------------------------------------------
 void drawGifs::draw(){
     
-    //initial idea always playing images. call load for new images
+    ofPushMatrix();
+    ofSetColor(235, 235, 235);
+    ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+    ofScale(0.80, 1.0);
     sequence.getFrameForTime(ofGetElapsedTimef())->draw(0,0);
-	
+    ofPopMatrix();
     
 }
 
-void drawGifs::loadNewSequence(string imageName, int totalAmt) {
+void drawGifs::loadNewSequence(string imageName, int totalAmt, int frameRate) {
     
     //File format for the example frames is
 	//frame01.png
 	//this creates a method call where the parameters
 	//prefix is frame, file type is png, from frame 1 to 11, 2 digits in the number
 	sequence.loadSequence(imageName, "png", 1, totalAmt, 2);
-	sequence.preloadAllFrames();	//this way there is no stutter when loading frames
-	sequence.setFrameRate(40); //set to ten frames per second for Muybridge's horse.
+	sequence.preloadAllFrames();
+	sequence.setFrameRate(frameRate);
+    
     
 }
 

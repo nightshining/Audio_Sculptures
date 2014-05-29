@@ -54,14 +54,41 @@ void drawRect::exit() {
     
 }
 
+
+void drawRect::randomizeColor() {
+    
+    randomColor = ofRandom(4);
+    
+    switch (randomColor) {
+        case 0:
+            randomFill = ofColor::lightSalmon;
+            break;
+        case 1:
+            randomFill = ofColor::lightYellow;
+            break;
+        case 2:
+            randomFill = ofColor::magenta;
+        case 3:
+            randomFill = ofColor::lightGrey;
+        default:
+            randomFill = ofColor::black;
+
+            break;
+    }
+    
+    
+}
+
+
+
 //--------------------------------------------------------------
 void drawRect::rect(int x, int y, float rotate){
     
     ofPushMatrix();
-    ofSetColor(0, 0, 0, 15);
+    ofSetColor(randomFill, 15);
     ofFill();
     ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
-    ofScale(.75, .75);
+    ofScale(.80, .80);
     ofRotateZ(rotate);
     ofRect(0, 0, x, y);
     ofPopMatrix();

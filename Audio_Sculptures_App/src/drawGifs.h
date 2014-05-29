@@ -1,4 +1,3 @@
-//////IDEA: NOT IN USE
 
 #pragma once
 
@@ -15,7 +14,7 @@ public:
     ~drawGifs();
     void draw();
     void exit();
-    void loadNewSequence(string imageName, int totalAmt);
+    void loadNewSequence(string imageName, int totalAmt, int frameRate);
     void unloadSequence();
 	
     void touchDown(ofTouchEventArgs & touch);
@@ -30,7 +29,6 @@ public:
     void deviceOrientationChanged(int newOrientation);
     
     ofxImageSequence sequence;
-    
 };
 
 

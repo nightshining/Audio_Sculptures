@@ -14,8 +14,7 @@
 #include "drawChip.h"
 #include "drawCyl.h"
 #include "Circles.h"
-//#include "drawGifs.h"
-//#include "imageCounter.h"
+#include "drawGifs.h"
 
 
 class testApp : public ofxiOSApp{
@@ -50,12 +49,11 @@ class testApp : public ofxiOSApp{
     drawChip chip; //OK
     drawCyl cyl; //OK
     
-    /*
+    
     //Backgrounds
-    drawGifs gif;
+    vector<drawGifs> gif;
     vector<string> imageNames;
-    */
-    //imageCounter images;
+    int randomImage;
     
     
     vector<Circles> circles;

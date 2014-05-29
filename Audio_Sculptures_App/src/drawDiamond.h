@@ -25,6 +25,9 @@ public:
     ofPoint pos;
     int sizeTrigger;
     
+    void randomizeColor();
+    ofColor randomFill;
+    int randomColor;
 };
 
 

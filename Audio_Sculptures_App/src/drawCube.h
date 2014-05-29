@@ -28,6 +28,11 @@ public:
     ofSoundPlayer cubeSound;
     ofRectangle clickBox;
     //sculpture bounce for sound design
+    
+    void randomizeColor();    
+    ofColor randomFill;
+    int randomColor;
+    
 };
 
 

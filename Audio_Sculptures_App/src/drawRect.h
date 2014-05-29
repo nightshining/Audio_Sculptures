@@ -25,6 +25,10 @@ public:
     int sliderSize, alpha;
     float trackVolume;
     
+    //random colors
+    void randomizeColor();
+    ofColor randomFill;
+    int randomColor;
 };
 
 
