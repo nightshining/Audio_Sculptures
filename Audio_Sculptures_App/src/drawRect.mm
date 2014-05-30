@@ -61,18 +61,17 @@ void drawRect::randomizeColor() {
     
     switch (randomColor) {
         case 0:
-            randomFill = ofColor::lightSalmon;
+            randomFill = ofColor::lightGrey;
             break;
         case 1:
             randomFill = ofColor::lightYellow;
             break;
         case 2:
-            randomFill = ofColor::magenta;
+            randomFill = ofColor::lightGreen;
         case 3:
-            randomFill = ofColor::lightGrey;
+            randomFill = ofColor::lightSkyBlue;
         default:
             randomFill = ofColor::black;
-
             break;
     }
     
@@ -124,6 +123,12 @@ void drawRect::rectSlider() {
     ofSetColor(0, 0, 0, alpha);
     ofFill();
     ofCircle(0, 0, sliderSize);
+    ofPopMatrix();
+    
+    ofPushMatrix();
+    ofSetColor(200);
+    ofTranslate(sliderPos.x - 15, sliderPos.y);
+    ofDrawBitmapString("Slide", 0, 0);
     ofPopMatrix();
     
 }

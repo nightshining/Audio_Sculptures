@@ -23,6 +23,11 @@ public:
     ofPoint pos;
     
     float counter, sinePan, sineSpeed;
+    
+    //random colors
+    void randomizeColor();
+    ofColor randomFill;
+    int randomColor;
 };
 
 

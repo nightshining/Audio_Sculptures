@@ -10,6 +10,8 @@
 	<string>Fake_Love_Sound_Sculptures</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>0269BDE2-0FB6-4102-9A73-A0D16AA9FFE2</key>
+		<string>https://github.com/Flightphase/ofxImageSequence.git</string>
 		<key>74C62125-E058-4AA0-9D9A-D95B58C7AFDE</key>
 		<string>https://github.com/nightshining/Audio_Sculptures.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>Audio_Sculptures_App/Fake_Love_Sound_Sculptures.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>0269BDE2-0FB6-4102-9A73-A0D16AA9FFE2</key>
+		<string>../../../../../addons/ofxImageSequence</string>
 		<key>74C62125-E058-4AA0-9D9A-D95B58C7AFDE</key>
 		<string>../../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>74C62125-E058-4AA0-9D9A-D95B58C7AFDE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Audio_Sculptures</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0269BDE2-0FB6-4102-9A73-A0D16AA9FFE2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxImageSequence</string>
 		</dict>
 	</array>
 </dict>

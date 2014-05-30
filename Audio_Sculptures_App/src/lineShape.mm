@@ -55,7 +55,7 @@ void lineShape::draw(){
 void lineShape::drawLine(float x, float y, float rotate){
     
     ofPushMatrix();
-    ofSetColor(0);
+    ofSetColor(randomFill);
     ofRotateX(rotate * sin(PI / 2));
     ofRotateY(x + rotate);
     ofScale(.10, .10);
@@ -78,6 +78,29 @@ void lineShape::moveLine(int x, int y) {
 
 //--------------------------------------------------------------
 void lineShape::exit(){
+    
+}
+
+void lineShape::randomizeColor() {
+    
+    randomColor = ofRandom(4);
+    
+    switch (randomColor) {
+        case 0:
+            randomFill = ofColor::lightGrey;
+            break;
+        case 1:
+            randomFill = ofColor::lightYellow;
+            break;
+        case 2:
+            randomFill = ofColor::lightGreen;
+        case 3:
+            randomFill = ofColor::lightSkyBlue;
+        default:
+            randomFill = ofColor::black;
+            break;
+    }
+    
     
 }
 

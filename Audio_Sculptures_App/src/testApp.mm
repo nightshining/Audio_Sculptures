@@ -31,7 +31,7 @@ void testApp::setup(){
         }
     }
     
-    int objectAmt = 40;
+    int objectAmt = 15;
     
     Circles temp;
     
@@ -46,20 +46,26 @@ void testApp::setup(){
     //Random button
     randomPos.set(75, 75);
     sizeRandom = 30;
-    randomImage = 0;
+    
     
     //// GENERATE BACKGROUNDS ////
     
-    imageNames.push_back("Lake/Lake");
     imageNames.push_back("Mountains/Mountains");
+    imageNames.push_back("Space/Space");
+    imageNames.push_back("Portrait/Portrait");
+
+    
+    imgAmt.push_back(10);
+    imgAmt.push_back(15);
+    imgAmt.push_back(1);
     
     gif.resize(imageNames.size());
     
     for (int i = 0; i < imageNames.size(); i++) {
-    gif[i].loadNewSequence(imageNames[i], 10, 7);
+    gif[i].loadNewSequence(imageNames[i], imgAmt[i], 6);
     }
     ////gif.loadNewSequence(fileName, amtFiles, frameRate)
-    
+
 }
 
 //--------------------------------------------------------------
@@ -274,6 +280,14 @@ void testApp::touchUp(ofTouchEventArgs & touch){
     randomSculpture3 = ofRandom(10);
         
     randomImage = ofRandom(gif.size());
+    
+    if (randomImage == 0) {
+        imgAmt[0];
+    } else if (randomImage == 1) {
+        imgAmt[1];
+    } else if (randomImage == 2) {
+        imgAmt[2];
+    }
     
     cube.randomizeColor();
     dia.randomizeColor();

@@ -128,5 +128,11 @@ void drawPentagon::cirSlider() {
     ofCircle(0, 0, sliderSize);
     ofPopMatrix();
     
+    ofPushMatrix();
+    ofSetColor(200);
+    ofTranslate(sliderPos.x - 15, sliderPos.y);
+    ofDrawBitmapString("Slide", 0, 0);
+    ofPopMatrix();
+    
 }
 
