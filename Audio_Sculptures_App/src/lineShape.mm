@@ -72,8 +72,6 @@ void lineShape::moveLine(int x, int y) {
     x = ofMap(pos.x, 0, ofGetWidth(), 0.0, 1.0);
     y = ofMap(pos.y, 0, ofGetHeight(), 0.0, 1.0);
     
-    
-    
 }
 
 //--------------------------------------------------------------
@@ -100,7 +98,6 @@ void lineShape::randomizeColor() {
             randomFill = ofColor::black;
             break;
     }
-    
     
 }
 

@@ -28,6 +28,9 @@ public:
     void randomizeColor();
     ofColor randomFill;
     int randomColor;
+    
+    //outer color
+    ofColor outerDiaColor;
 };
 
 

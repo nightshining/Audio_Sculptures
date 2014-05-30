@@ -23,6 +23,14 @@ public:
     bool trigger;
     ofPoint pos;
     int sizeTrigger;
+    
+    //Randomize Colors
+    void randomizeColor();
+    ofColor randomFill;
+    int randomColor;
+    
+    //outer color
+    ofColor outerCyl;
 };
 
 

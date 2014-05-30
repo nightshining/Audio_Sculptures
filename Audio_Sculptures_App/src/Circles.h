@@ -21,4 +21,8 @@ public:
     float size, counter, randomSizeSpeed, randomRotateSpeed;
     vector<ofSoundPlayer> circleSound;
     int randomSample;
+    
+    //random colors
+    void randomizeColor(int randomColor);
+    ofColor randomFill;
 };

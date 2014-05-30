@@ -24,6 +24,8 @@ void drawCube::setup(){
     sizeTrigger = 60;
     pos.set(ofGetWidth() / 2 - 200, ofGetHeight() / 2);
     randomFill.set(ofColor::black);
+    
+    outerCube = ofColor::black;
 }
 
 //--------------------------------------------------------------
@@ -88,13 +90,13 @@ void drawCube::draw(){
         ofSetColor(0);
         ofNoFill();
         ofDrawBox(0, 0, -1, 50, 50, 50);
-        ofSetColor(0, 0, 0, alpha);
+        ofSetColor(outerCube, alpha);
         ofFill();
         ofDrawBox(0, 0, -1, 50, 50, 50);
         ofPopMatrix();
     }
     //cam.end();
-    
+        
     //ofSetColor(0);
     //ofDrawBitmapString("Waveform MS: " + ofToString(cubeSound.getPositionMS()), 50, 50);
 }

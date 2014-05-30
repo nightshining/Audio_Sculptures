@@ -283,16 +283,30 @@ void testApp::touchUp(ofTouchEventArgs & touch){
     
     if (randomImage == 0) {
         imgAmt[0];
+        cube.outerCube = ofColor::black;
+        dia.outerDiaColor = ofColor::black;
+        cyl.outerCyl = ofColor::black;
     } else if (randomImage == 1) {
         imgAmt[1];
+        cube.outerCube = ofColor::white;
+        dia.outerDiaColor = ofColor::white;
+        cyl.outerCyl = ofColor::white;
     } else if (randomImage == 2) {
         imgAmt[2];
+        cube.outerCube = ofColor::black;
+        dia.outerDiaColor = ofColor::black;
+        cyl.outerCyl = ofColor::black;
+
     }
     
     cube.randomizeColor();
     dia.randomizeColor();
     rect.randomizeColor();
+    cyl.randomizeColor();
+    line.randomizeColor();
+        
     
+        
     /*cout << "Sculpture 1: " << randomSculpture1 << endl;
     cout << "Sculpture 2: " << randomSculpture2 << endl;
     cout << "Sculpture 3: " << randomSculpture3 << endl;*/

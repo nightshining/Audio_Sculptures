@@ -45,12 +45,12 @@ void Circles::draw(){
         ofRotateY(rotateAction + i );
         ofRotateX(rotateAction);
         //outer
-        ofSetColor(0,0,0,alphaAction);
+        ofSetColor(0, alphaAction);
         ofFill();
         ofCircle(0, 0, size - 10);
         
         //inner
-        ofSetColor(0, 0, 0, i + 100);
+        ofSetColor(randomFill, i + 100);
         ofNoFill();
         ofCircle(0, 0, size + i);
         ofPopMatrix();
@@ -74,6 +74,24 @@ void Circles::touchTrigger(int x, int y){
         alphaAction = 200.0;
         circleSound[randomSample].play();
         
+    }
+    
+}
+
+void Circles::randomizeColor(int randomColor) {
+    
+    switch (randomColor) {
+        case 0:
+            randomFill = ofColor::teal;
+            break;
+        case 1:
+            randomFill = ofColor::lightYellow;
+            break;
+        case 2:
+            randomFill = ofColor::magenta;
+        default:
+            randomFill = ofColor::black;
+            break;
     }
     
 }

@@ -34,6 +34,9 @@ public:
     ofColor randomFill;
     int randomColor;
     
+    //outer box color
+    ofColor outerCube;
+    
 };
 
 

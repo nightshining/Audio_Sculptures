@@ -22,6 +22,8 @@ void drawDiamond::setup(){
     pos.set(ofGetWidth() / 2 + 200, ofGetHeight() / 2);
     
     randomFill.set(ofColor::black);
+    outerDiaColor.set(ofColor::black);
+    
 }
 
 //--------------------------------------------------------------
@@ -75,7 +77,7 @@ void drawDiamond::sphere(){
     ofFill();
     ofDrawSphere(sendNoise);
     //big shape
-    ofSetColor(0,0,0,150);
+    ofSetColor(outerDiaColor,150);
     ofNoFill();
     ofDrawSphere(50);
     ofPopMatrix();

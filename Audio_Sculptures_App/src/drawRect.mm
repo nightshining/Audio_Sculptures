@@ -127,7 +127,7 @@ void drawRect::rectSlider() {
     
     ofPushMatrix();
     ofSetColor(200);
-    ofTranslate(sliderPos.x - 15, sliderPos.y);
+    ofTranslate(sliderPos.x - 20, sliderPos.y);
     ofDrawBitmapString("Slide", 0, 0);
     ofPopMatrix();
     

@@ -44,7 +44,7 @@ void drawCyl::draw(){
 
     for (int i = 0; i < 50; i += 15) {
     cylinder(i, 25, 50, sendNoise - 240, 50);
-    cylinder(i, 15, 25, sendNoise - 50, 0);
+    cylinder(0, 15, 25, sendNoise - 50, 0);
     //ofDrawBitmapString("Sound File Position: " + ofToString(sound.getPosition()), 50, 50);
     }
     
@@ -66,10 +66,10 @@ void drawCyl::cylinder(float iterate, int width, int height, float alpha, int ou
     ofScale(2.0, 2.0);
     ofRotateY(rotate + iterate * PI / 2);
     ofRotateX(rotate + iterate * PI);
-    ofSetColor(0, 0, 0, alpha);
+    ofSetColor(randomFill, alpha);
     ofFill();
     ofDrawCylinder(0, 0, width, height);
-    ofSetColor(0, 0, 0, outline);
+    ofSetColor(outerCyl, outline);
     ofNoFill();
     ofDrawCylinder(0, 0, width, height);
     ofPopMatrix();
@@ -101,7 +101,26 @@ void drawCyl::moveCyl(int x, int y) {
     pos.y = y;
         
     }
-    
 }
 
+void drawCyl::randomizeColor() {
+    
+    randomColor = ofRandom(4);
+    
+    switch (randomColor) {
+        case 0:
+            randomFill = ofColor::lightGrey;
+            break;
+        case 1:
+            randomFill = ofColor::lightYellow;
+            break;
+        case 2:
+            randomFill = ofColor::lightGreen;
+        case 3:
+            randomFill = ofColor::crimson;
+        default:
+            randomFill = ofColor::black;
+            break;
+    }
+}
 
