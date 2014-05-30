@@ -1,3 +1,4 @@
+
 #include "testApp.h"
 
 //--------------------------------------------------------------
@@ -46,7 +47,7 @@ void testApp::setup(){
     //Random button
     randomPos.set(75, 75);
     sizeRandom = 30;
-    
+    buttonColor = ofColor::black;
     
     //// GENERATE BACKGROUNDS ////
     
@@ -103,7 +104,7 @@ void testApp::draw(){
     ofSetColor(0, 0, 0, 100);
     ofNoFill();
     ofCircle(75, 75, sizeRandom);
-    ofSetColor(0,0,0, alpha);
+    ofSetColor(buttonColor, alpha);
     ofFill();
     ofCircle(randomPos.x, randomPos.y, sizeRandom);
     ///ofDrawBitmapString("Randomize Sound Sculptures", 150, 75);
@@ -162,8 +163,6 @@ void testApp::draw(){
 
             cyl.draw();
     }
-    
-  
     
     /////Fake logo
     /*if (ofGetElapsedTimef() < 4.0) {
@@ -283,16 +282,23 @@ void testApp::touchUp(ofTouchEventArgs & touch){
     
     if (randomImage == 0) {
         imgAmt[0];
+        buttonColor = ofColor::black;
+        pent.pentColor = ofColor::black;
         cube.outerCube = ofColor::black;
         dia.outerDiaColor = ofColor::black;
         cyl.outerCyl = ofColor::black;
     } else if (randomImage == 1) {
         imgAmt[1];
+        buttonColor = ofColor::lightPink;
+        pent.pentColor = ofColor::white;
         cube.outerCube = ofColor::white;
         dia.outerDiaColor = ofColor::white;
         cyl.outerCyl = ofColor::white;
+        
     } else if (randomImage == 2) {
         imgAmt[2];
+        buttonColor = ofColor::black;
+        pent.pentColor = ofColor::black;
         cube.outerCube = ofColor::black;
         dia.outerDiaColor = ofColor::black;
         cyl.outerCyl = ofColor::black;
@@ -304,7 +310,7 @@ void testApp::touchUp(ofTouchEventArgs & touch){
     rect.randomizeColor();
     cyl.randomizeColor();
     line.randomizeColor();
-        
+    squid.randomizeColor();
     
         
     /*cout << "Sculpture 1: " << randomSculpture1 << endl;

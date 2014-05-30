@@ -23,6 +23,11 @@ public:
     ofSoundPlayer sound;
     ofPoint squidPos;
     float trackVolume;
+    
+    //random color
+    void randomizeColor();
+    ofColor randomFill;
+    int randomColor;
 };
 
 

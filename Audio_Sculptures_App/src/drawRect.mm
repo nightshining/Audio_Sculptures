@@ -101,7 +101,7 @@ void drawRect::slide(int x, int y){
     
     int dist1 = ofDist(sliderPos.x, sliderPos.y, x, y);
     
-    if (dist1 < sliderSize){
+    if (dist1 < sliderSize + 10){
     speed = ofMap(x, 0, ofGetWidth(), 10.0, 0.01);
     sound.setSpeed(ofMap(x, 0, ofGetWidth(), 1.0, 0.0, true));
     

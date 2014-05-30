@@ -56,8 +56,6 @@ void drawCube::update(){
         alphaOutline = noise;
         
     }
-    
-    
 }
 
 
@@ -111,17 +109,19 @@ void drawCube::randomizeColor() {
     
     switch (randomColor) {
         case 0:
-            randomFill = ofColor::teal;
+            randomFill = ofColor::aquamarine;
             break;
         case 1:
             randomFill = ofColor::lightYellow;
             break;
         case 2:
             randomFill = ofColor::magenta;
-        default:
+            break;
+        case 3:
             randomFill = ofColor::black;
             break;
     }
+    cout << "Cube: " << randomColor << endl;
     
 }
 

@@ -49,6 +49,8 @@ class testApp : public ofxiOSApp{
     drawChip chip; //OK
     drawCyl cyl; //OK
     
+    //Generate Button
+    ofColor buttonColor;
     
     //Backgrounds
     vector<drawGifs> gif;

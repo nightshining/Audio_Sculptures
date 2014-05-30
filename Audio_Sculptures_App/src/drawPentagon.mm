@@ -79,7 +79,7 @@ void drawPentagon::shape(int x, int y, int size, float alpha) {
     ofRotateZ(rotateShape + alpha);
     ofScale(scaleParaX, scaleParaY);
     //ofSetPolyMode(OF_POLY_WINDING_NONZERO); //odd that this effected other objects
-    ofSetColor(0, 0, 0, 80);
+    ofSetColor(pentColor, 80);
     ofNoFill();
     ofCircle(0, 0, size);
     ofPopMatrix();
@@ -102,7 +102,7 @@ void drawPentagon::slide(int x, int y){
     
     int dist1 = ofDist(sliderPos.x, sliderPos.y, x, y);
     
-    if (dist1 < sliderSize){
+    if (dist1 < sliderSize + 10){
         
     controlShape = ofMap(x, 0, ofGetWidth(), 0.0001, 0.07);
     sound.setSpeed(ofMap(x, 0, ofGetWidth(), 0.30, 1.0, true));

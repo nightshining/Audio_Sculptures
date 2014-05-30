@@ -47,11 +47,11 @@ void drawSquid::draw(){
    //cam.begin();
     for (int i = 0; i < 700; i += 5) {
         ofPushMatrix();
-        ofSetColor(ofColor::black, ofMap(i, 0, 500, 180, 100));
+        ofSetColor(randomFill, ofMap(i, 0, 500, 180, 100));
         ofNoFill();
         ofTranslate(ofGetWidth() / 2 + 200, ofGetHeight() / 2);
-        ofRotateX(i + squidPos.y);
-        ofRotateY(rotate + i );
+        ofRotateX( i + squidPos.y );
+        ofRotateY( rotate + i );
         ofRotateZ( rotate  + cos(i) );
         ofScale(0.20, 0.20);
         ofCurve(point1.x + i + noise, point1.y + i + noise, point2.x + i, point2.y + i, point3.x + i, point3.y + i, point4.x, point4.y);
@@ -75,6 +75,29 @@ void drawSquid::slide(int x, int y){
 
 //--------------------------------------------------------------
 void drawSquid::exit(){
+    
+}
+
+void drawSquid::randomizeColor() {
+    
+    randomColor = ofRandom(4);
+    
+    switch (randomColor) {
+        case 0:
+            randomFill = ofColor::crimson;
+            break;
+        case 1:
+            randomFill = ofColor::aquamarine;
+            break;
+        case 2:
+            randomFill = ofColor::whiteSmoke;
+        case 3:
+            randomFill = ofColor::crimson;
+        default:
+            randomFill = ofColor::black;
+            break;
+    }
+
     
 }
 

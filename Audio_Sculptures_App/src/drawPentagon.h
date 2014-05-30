@@ -33,6 +33,8 @@ public:
     ofPoint sliderPos;
     int sliderSize;
     float alpha, alphaCounter;
+    ofColor pentColor;
+    
 };
 
 
